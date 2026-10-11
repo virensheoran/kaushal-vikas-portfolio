@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaushal Vikas E-Portfolio | Viren Sheoran</title>
+<script>
+  /* If your own photo (images/xxx.jpg) is missing, quietly show the ready-made poster (images/xxx.svg). */
+  function useFallback(img, svg){
+    if(img.dataset.tried){ img.style.display='none'; return; }
+    img.dataset.tried = '1';
+    img.src = svg;
+  }
+</script>
+<style>
+  /* ============================================================
+     KAUSHAL VIKAS E-PORTFOLIO
+     Student : Viren Sheoran  |  Class 9-C
+     School  : Scholars Global School
+     Teacher : Ms. Astha      |  Session 2026-27
+     ------------------------------------------------------------
+     Images go in the "images" folder next to this file.
+     See "HOW-TO-USE.txt" for instructions.
+     ============================================================ */
+
+  :root{
+    --ink:#12203a;
+    --muted:#5b6b86;
+    --line:#e2e8f2;
+    --card:#ffffff;
+    --bg:#eef2f9;
+    --blue:#1e3a8a;
+    --blue-2:#2b50c9;
+    --saffron:#f59e0b;
+    --green:#15803d;
+    --red:#c0392b;
+    --shadow:0 10px 30px rgba(18,32,58,.10);
+    --radius:18px;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    font-family:"Segoe UI",Roboto,-apple-system,"Helvetica Neue",Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.65;
+  }
+
+  a{color:var(--blue-2);}
+
+  /* ---------- Top navigation ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{
+    max-width:1080px; margin:0 auto;
+    display:flex; align-items:center; gap:10px;
+    padding:10px 20px; flex-wrap:wrap;
+  }
+  .brand{
+    font-weight:800; letter-spacing:.4px;
+    color:var(--blue); margin-right:auto; font-size:15px;
+  }
+  .brand span{color:var(--saffron);}
+  .nav a{
+    text-decoration:none; font-size:14px; font-weight:600;
+    color:var(--muted); padding:7px 12px; border-radius:999px;
+  }
+  .nav a:hover{background:#eef3ff; color:var(--blue-2);}
+
+  /* ---------- Layout ---------- */
+  .wrap{max-width:1080px; margin:0 auto; padding:26px 20px 70px;}
+
+  section{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:34px 34px 38px;
+    margin:26px 0;
+    scroll-margin-top:72px;
+  }
+
+  /* ---------- Cover ---------- */
+  .cover{
+    text-align:center;
+    background:
+      radial-gradient(900px 300px at 50% -80px, rgba(43,80,201,.20), transparent 70%),
+      linear-gradient(180deg,#ffffff, #f7f9ff);
+    border-top:6px solid transparent;
+    border-image:linear-gradient(90deg,var(--saffron),#ffffff 50%,var(--green)) 1;
+  }
+  .flag-line{
+    height:6px; width:120px; margin:0 auto 22px; border-radius:999px;
+    background:linear-gradient(90deg,var(--saffron),#ffffff 50%,var(--green));
+    border:1px solid var(--line);
+  }
+  .subject-chip{
+    display:inline-block; font-size:12.5px; font-weight:700; letter-spacing:1.5px;
+    text-transform:uppercase; color:var(--blue-2);
+    background:#eaf0ff; border:1px solid #d6e0ff;
+    padding:6px 16px; border-radius:999px;
+  }
+  .cover h1{
+    font-size:clamp(28px,5vw,46px); margin:16px 0 6px; line-height:1.15;
+    letter-spacing:-.5px;
+  }
+  .cover h1 .accent{
+    background:linear-gradient(90deg,var(--blue),var(--blue-2));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .cover .tagline{color:var(--muted); font-size:17px; margin:0 0 26px;}
+  .student-card{
+    display:inline-block; text-align:left;
+    background:#fff; border:1px solid var(--line); border-radius:16px;
+    padding:20px 26px; box-shadow:0 6px 18px rgba(18,32,58,.06);
+  }
+  .student-card table{border-collapse:collapse;}
+  .student-card td{padding:5px 6px; font-size:15px;}
+  .student-card td:first-child{color:var(--muted); font-weight:600; padding-right:22px;}
+  .student-card td:last-child{font-weight:700;}
+
+  /* ---------- Headings ---------- */
+  h2{
+    font-size:26px; margin:0 0 4px; display:flex; align-items:center; gap:12px;
+    letter-spacing:-.3px;
+  }
+  .num{
+    flex:none; width:38px; height:38px; border-radius:11px;
+    display:grid; place-items:center; color:#fff; font-size:17px; font-weight:800;
+    background:linear-gradient(135deg,var(--blue),var(--blue-2));
+    box-shadow:0 6px 14px rgba(43,80,201,.35);
+  }
+  h2.green .num{background:linear-gradient(135deg,#166534,var(--green)); box-shadow:0 6px 14px rgba(21,128,61,.35);}
+  h2.amber .num{background:linear-gradient(135deg,#b45309,var(--saffron)); box-shadow:0 6px 14px rgba(245,158,11,.35);}
+  .sub{color:var(--muted); margin:0 0 22px; font-size:15px;}
+
+  h3{font-size:18px; margin:26px 0 8px;}
+  h4{font-size:15.5px; margin:18px 0 6px;}
+  p{margin:10px 0;}
+  ul,ol{margin:8px 0 8px; padding-left:22px;}
+  li{margin:6px 0;}
+
+  /* ---------- Photo box with fallback ---------- */
+  .photo-box{
+    position:relative; margin:0;
+    aspect-ratio:4 / 3; border-radius:16px; overflow:hidden;
+    border:1px solid var(--line); background:#ffffff;
+  }
+  .photo-box img{
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; display:block; background:var(--card);
+  }
+  .ph{
+    position:absolute; inset:0; display:grid; place-content:center;
+    text-align:center; color:var(--muted); padding:24px;
+  }
+  .ph .ico{font-size:40px; margin-bottom:8px;}
+  .ph b{color:var(--ink); display:block; font-size:16px;}
+  .ph code{
+    background:#fff; border:1px solid var(--line); border-radius:7px;
+    padding:2px 8px; font-size:13px; display:inline-block; margin-top:8px;
+  }
+  figcaption{margin-top:8px; font-size:13px; color:var(--muted); text-align:center;}
+
+  /* ---------- Cards grid ---------- */
+  .grid{display:grid; gap:16px;}
+  .grid.two{grid-template-columns:1fr 1fr;}
+  .grid.three{grid-template-columns:repeat(3,1fr);}
+  @media (max-width:820px){.grid.two,.grid.three{grid-template-columns:1fr;}}
+
+  .tile{
+    border:1px solid var(--line); border-radius:14px; padding:16px 18px;
+    background:#fbfcff;
+  }
+  .tile b{display:block; margin-bottom:4px; font-size:15px;}
+  .tile small{color:var(--muted); font-size:13.5px;}
+  .tile .emoji{font-size:22px; display:block; margin-bottom:6px;}
+
+  .tile.natural{border-left:5px solid var(--green);}
+  .tile.manmade{border-left:5px solid var(--red);}
+  .tile.work{border-left:5px solid var(--saffron);}
+
+  /* ---------- Callout ---------- */
+  .callout{
+    border-left:5px solid var(--blue-2); background:#eef3ff;
+    border-radius:0 12px 12px 0; padding:14px 18px; margin:18px 0;
+  }
+  .callout.warn{border-left-color:var(--red); background:#fdeeec;}
+  .callout.safe{border-left-color:var(--green); background:#eaf7ee;}
+  .callout b{display:block; margin-bottom:2px;}
+
+  /* ---------- Table ---------- */
+  table.data{width:100%; border-collapse:collapse; margin:14px 0; font-size:14.5px;}
+  table.data th,table.data td{border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top;}
+  table.data th{background:#f1f5fd; color:var(--ink);}
+  table.data tr:nth-child(even) td{background:#fafbff;}
+
+  /* ---------- Value chain poster ---------- */
+  .poster{
+    border:2px solid var(--line); border-radius:16px; padding:22px;
+    background:linear-gradient(180deg,#ffffff,#f7f9ff);
+  }
+  .poster-title{
+    text-align:center; font-weight:800; letter-spacing:1px; text-transform:uppercase;
+    color:var(--blue); font-size:15px; margin-bottom:4px;
+  }
+  .poster-sub{text-align:center; color:var(--muted); font-size:12.5px; margin-bottom:18px;}
+  .support-row{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:10px;}
+  .chain-row{display:flex; align-items:stretch; gap:0; margin:0 0 16px; overflow-x:auto;}
+  .credit{
+    background:#e8f0ff; color:var(--blue); font-weight:700; font-size:12.5px;
+    text-transform:uppercase; letter-spacing:1px; text-align:center;
+    padding:8px; border-radius:10px; margin-bottom:8px;
+  }
+  .node{
+    flex:1; min-width:120px; text-align:center; padding:14px 8px;
+    border:1px solid #cdd9f5; border-radius:12px; background:#fff;
+    font-size:13px; font-weight:700; color:var(--blue);
+    box-shadow:0 4px 10px rgba(30,58,138,.07);
+  }
+  .node small{display:block; font-weight:500; color:var(--muted); font-size:11.5px; margin-top:4px;}
+  .arrow{display:grid; place-items:center; padding:0 6px; color:var(--blue-2); font-size:20px; font-weight:800;}
+  .sup{
+    border:1px dashed #c9b98f; background:#fffdf5; border-radius:12px;
+    padding:10px; text-align:center; font-size:12.5px; font-weight:700; color:#8a6d1f;
+  }
+  .sup small{display:block; font-weight:500; color:#a08a4f; font-size:11px; margin-top:3px;}
+  .profit{
+    text-align:center; font-weight:800; letter-spacing:1px; color:var(--green);
+    border:2px solid #bfe3c9; background:#eaf7ee; border-radius:12px; padding:8px; margin-top:6px;
+  }
+  @media (max-width:820px){
+    .support-row{grid-template-columns:1fr 1fr;}
+    .chain-row{flex-direction:column;}
+    .arrow{transform:rotate(90deg); padding:4px 0;}
+  }
+
+  /* ---------- Quote / pledge ---------- */
+  .pledge{
+    border-radius:16px; padding:22px 24px; color:#fff;
+    background:linear-gradient(135deg,#1e3a8a,#2b50c9);
+    box-shadow:0 12px 26px rgba(30,58,138,.30);
+  }
+  .pledge h3{margin:0 0 6px; color:#fff;}
+  .pledge p{margin:6px 0 0; color:#dbe4ff;}
+
+  /* ---------- Footer ---------- */
+  footer{text-align:center; color:var(--muted); font-size:13.5px; padding:10px 20px 40px;}
+  footer b{color:var(--ink);}
+
+  /* ---------- Toolbar ---------- */
+  .toolbar{max-width:1080px; margin:22px auto 0; padding:0 20px; text-align:right;}
+  .toolbar button{
+    font:inherit; font-weight:600; cursor:pointer;
+    background:var(--blue); color:#fff; border:none;
+    padding:10px 18px; border-radius:999px; box-shadow:0 6px 16px rgba(30,58,138,.28);
+  }
+  .toolbar button:hover{background:var(--blue-2);}
+
+  /* ---------- Print / PDF ---------- */
+  @media print{
+    body{background:#fff;}
+    .topbar,.toolbar{display:none !important;}
+    .wrap{padding:0; max-width:none;}
+    section{
+      box-shadow:none; border:none; border-radius:0;
+      page-break-inside:avoid; padding:18px 0; margin:0;
+      border-bottom:1px solid #ddd;
+    }
+    .cover{border-image:none; border-top:4px solid #1e3a8a;}
+    .photo-box{aspect-ratio:4 / 3;}
+    a{color:var(--ink); text-decoration:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">Kaushal <span>Vikas</span> E-Portfolio</div>
+    <nav class="nav">
+      <a href="#cover">Home</a>
+      <a href="#hazards">All Hazards</a>
+      <a href="#valuechain">Value Chain</a>
+      <a href="#personal">Personal Life &amp; Service</a>
+    </nav>
+  </div>
+</div>
+
+<div class="toolbar">
+  <button onclick="window.print()">🖨️ Save as PDF / Print</button>
+</div>
+
+<div class="wrap">
+
+  <!-- ================= COVER ================= -->
+  <section class="cover" id="cover">
+    <div class="flag-line"></div>
+    <span class="subject-chip">Kaushal Vikas &nbsp;•&nbsp; Skill Development</span>
+    <h1>My <span class="accent">E-Portfolio</span></h1>
+    <p class="tagline">A collection of my project work &amp; learning journey</p>
+
+    <div class="student-card">
+      <table>
+        <tr><td>Name</td><td>Viren Sheoran</td></tr>
+        <tr><td>Class &amp; Section</td><td>9 - C</td></tr>
+        <tr><td>School</td><td>Scholars Global School</td></tr>
+        <tr><td>Subject</td><td>Kaushal Vikas</td></tr>
+        <tr><td>Teacher</td><td>Ms. Astha</td></tr>
+        <tr><td>Session</td><td>2026 - 27</td></tr>
+      </table>
+    </div>
+
+    <p style="margin-top:26px; color:var(--muted); font-size:14.5px;">
+      <b style="color:var(--ink);">Contents:</b>
+      &nbsp;1. All Hazards &nbsp;·&nbsp; 2. Value Chain Poster &nbsp;·&nbsp; 3. Personal Life &amp; Service
+    </p>
+  </section>
+
+  <!-- ================= 1. ALL HAZARDS ================= -->
+  <section id="hazards">
+    <h2><span class="num">1</span> All Hazards</h2>
+    <p class="sub">Understanding dangers around us and how to stay safe — “Be Aware, Be Prepared.”</p>
+
+    <figure class="photo-box">
+      <img src="images/all-hazards.jpg" alt="All Hazards poster by Viren Sheoran"
+           onerror="useFallback(this,'images/all-hazards.svg')">
+      <div class="ph">
+        <span class="ico">📷</span>
+        <b>Image loading…</b>
+        <span>To use your own photo, save it as <code>images/all-hazards.jpg</code></span>
+      </div>
+    </figure>
+    <figcaption>Fig. 1.1 — My All Hazards poster: the main dangers around us and how to stay safe.</figcaption>
+
+    <h3>What is a Hazard?</h3>
+    <p>A <b>hazard</b> is any source, situation or thing that can cause harm, injury, damage or loss. A hazard becomes a <b>risk</b> when a person is exposed to it. An <b>“All Hazards” approach</b> means we prepare for and stay alert to <em>every kind</em> of danger — whether it comes from nature, from people, or from the place where we work — instead of planning for only one type of disaster.</p>
+
+    <h3>Types of Hazards</h3>
+    <div class="grid three">
+      <div class="tile natural">
+        <span class="emoji">🌊</span>
+        <b>Natural Hazards</b>
+        <small>Floods, earthquakes, cyclones, drought, landslides, lightning, heat waves and forest fires.</small>
+      </div>
+      <div class="tile manmade">
+        <span class="emoji">⚠️</span>
+        <b>Man-Made Hazards</b>
+        <small>Fire accidents, road accidents, gas leaks, chemical spills, electric shock, cyber crime and conflict.</small>
+      </div>
+      <div class="tile work">
+        <span class="emoji">🛠️</span>
+        <b>Workplace Hazards</b>
+        <small>Unsafe tools, noise, heat, sharp edges, dust, germs and stress at the place of work.</small>
+      </div>
+    </div>
+
+    <h4>The 5 Main Workplace Hazards</h4>
+    <ul>
+      <li><b>Physical</b> — noise, heat, vibration, slippery floor, sharp or moving machines.</li>
+      <li><b>Chemical</b> — acids, paints, solvents, cleaning liquids, harmful fumes.</li>
+      <li><b>Biological</b> — bacteria, viruses, fungi and other germs.</li>
+      <li><b>Ergonomic</b> — wrong posture, lifting heavy loads, repeating the same action.</li>
+      <li><b>Psychological</b> — stress, pressure, long working hours, bullying.</li>
+    </ul>
+
+    <h3>Do’s and Don’ts</h3>
+    <table class="data">
+      <tr><th>✅ Do’s</th><th>❌ Don’ts</th></tr>
+      <tr><td>Wear proper safety gear (helmet, gloves, goggles, mask).</td><td>Don’t touch electrical wires with wet hands.</td></tr>
+      <tr><td>Keep the work area clean, dry and well-lit.</td><td>Don’t block emergency exits or fire equipment.</td></tr>
+      <tr><td>Use tools only for the purpose they are made for.</td><td>Don’t run or play in the workshop or laboratory.</td></tr>
+      <tr><td>Report every hazard to a teacher or supervisor at once.</td><td>Don’t ignore a small leak, spark or cracking sound.</td></tr>
+    </table>
+
+    <div class="callout safe">
+      <b>🛡️ Safety FIRST</b>
+      F — Fire safety &nbsp;·&nbsp; I — Inspect the area &nbsp;·&nbsp; R — Report hazards &nbsp;·&nbsp; S — Safety gear &nbsp;·&nbsp; T — Think before you act.
+    </div>
+
+    <div class="callout warn">
+      <b>📞 Emergency Numbers (India)</b>
+      All-in-one Emergency: <b>112</b> &nbsp;·&nbsp; Fire: <b>101</b> &nbsp;·&nbsp; Ambulance: <b>108</b> &nbsp;·&nbsp; Police: <b>100</b>
+    </div>
+
+    <h3>What I Learned</h3>
+    <p>Most accidents do not “just happen” — they are usually the result of an ignored hazard. If we learn to <b>spot, avoid and report</b> hazards, we can protect ourselves and the people around us. This project taught me that safety is not a rule to fear, but a habit to build every single day.</p>
+  </section>
+
+  <!-- ================= 2. VALUE CHAIN ================= -->
+  <section id="valuechain">
+    <h2 class="green"><span class="num">2</span> Value Chain Poster</h2>
+    <p class="sub">How a product or service moves from raw material to the happy customer — adding value at every step.</p>
+
+    <h3>What is a Value Chain?</h3>
+    <p>A <b>value chain</b> is the complete series of activities that a business performs to create a product or service and deliver it to the customer. Each step <b>adds value</b> — it makes the product better, faster, cheaper or more useful. The idea was given by <b>Michael Porter</b> in 1985.</p>
+
+    <h3>My Value Chain Poster</h3>
+    <figure class="photo-box">
+      <img src="images/value-chain.jpg" alt="Value Chain poster by Viren Sheoran"
+           onerror="useFallback(this,'images/value-chain.svg')">
+      <div class="ph">
+        <span class="ico">🖼️</span>
+        <b>Image loading…</b>
+        <span>To use your own poster photo, save it as <code>images/value-chain.jpg</code></span>
+      </div>
+    </figure>
+    <figcaption>Fig. 2.1 — My Value Chain poster: how value is added at every step.</figcaption>
+
+    <p>The diagram below explains the same value chain in words and steps:</p>
+
+    <div class="poster">
+      <div class="poster-title">The Value Chain — Porter’s Model</div>
+      <div class="poster-sub">SUPPORT ACTIVITIES run across the whole business</div>
+
+      <div class="support-row">
+        <div class="sup">🏢 Firm Infrastructure<small>Planning &amp; management</small></div>
+        <div class="sup">👥 Human Resource<small>Hiring &amp; training</small></div>
+        <div class="sup">💡 Technology<small>Research &amp; design</small></div>
+        <div class="sup">📦 Procurement<small>Buying materials</small></div>
+      </div>
+
+      <div class="credit">Primary Activities</div>
+      <div class="chain-row">
+        <div class="node">1. Inbound<small>Raw material in</small></div>
+        <div class="arrow">→</div>
+        <div class="node">2. Operations<small>Making the product</small></div>
+        <div class="arrow">→</div>
+        <div class="node">3. Outbound<small>Storage &amp; delivery</small></div>
+        <div class="arrow">→</div>
+        <div class="node">4. Marketing<small>Advertising &amp; selling</small></div>
+        <div class="arrow">→</div>
+        <div class="node">5. Service<small>After-sales help</small></div>
+      </div>
+
+      <div class="profit">💰 VALUE ADDED → CUSTOMER SATISFACTION → PROFIT</div>
+    </div>
+
+    <h3>Example: Value Chain of a Packet of Biscuits</h3>
+    <ol>
+      <li><b>Inbound:</b> Wheat, sugar and oil are bought and stored.</li>
+      <li><b>Operations:</b> Dough is mixed, shaped, baked and packed.</li>
+      <li><b>Outbound:</b> Packets are boxed and sent to shops.</li>
+      <li><b>Marketing:</b> Ads on TV and offers attract buyers.</li>
+      <li><b>Service:</b> Customer care handles complaints and returns.</li>
+    </ol>
+
+    <h3>Why is the Value Chain Important?</h3>
+    <div class="grid two">
+      <div class="tile"><b>✔ Adds value</b><small>Every step improves the product or service.</small></div>
+      <div class="tile"><b>💸 Reduces cost</b><small>Helps find and remove wasteful steps.</small></div>
+      <div class="tile"><b>⭐ Improves quality</b><small>Focus on what the customer really wants.</small></div>
+      <div class="tile"><b>😊 Builds trust</b><small>Satisfied customers come back again.</small></div>
+    </div>
+
+    <div class="callout">
+      <b>💡 Key Idea</b>
+      The value chain turns <b>raw material into value</b>. If any single link is weak, the whole chain becomes slow or costly — just like a real chain.
+    </div>
+  </section>
+
+  <!-- ================= 3. PERSONAL LIFE & SERVICE ================= -->
+  <section id="personal">
+    <h2 class="amber"><span class="num">3</span> Personal Life &amp; Service</h2>
+    <p class="sub">Building a better “me” — and using my skills to serve others.</p>
+
+    <figure class="photo-box">
+      <img src="images/personal-life.jpg" alt="Personal life and service poster by Viren Sheoran"
+           onerror="useFallback(this,'images/personal-life.svg')">
+      <div class="ph">
+        <span class="ico">📸</span>
+        <b>Image loading…</b>
+        <span>To use your own photo, save it as <code>images/personal-life.jpg</code></span>
+      </div>
+    </figure>
+    <figcaption>Fig. 3.1 — My Personal Life &amp; Service poster.</figcaption>
+
+    <h3>My Personal Life</h3>
+    <p>My personal life is everything that shapes the person I am — my health, my habits, my goals, my values and my relationships. Managing it well means looking after my body, my mind and my time.</p>
+
+    <div class="grid three">
+      <div class="tile"><span class="emoji">🌱</span><b>Physical</b><small>Exercise, hygiene, healthy food, enough sleep.</small></div>
+      <div class="tile"><span class="emoji">🧠</span><b>Mental</b><small>Reading, learning new skills, positive thinking.</small></div>
+      <div class="tile"><span class="emoji">❤️</span><b>Social</b><small>Respecting elders, teamwork, good manners.</small></div>
+    </div>
+
+    <h4>Good Personal Habits I Practice</h4>
+    <ul>
+      <li>Waking up on time and following a daily routine.</li>
+      <li>Keeping myself, my books and my room neat and clean.</li>
+      <li>Being honest, punctual and polite in my speech.</li>
+      <li>Managing my time between study, play and rest.</li>
+      <li>Setting small goals and working to achieve them.</li>
+    </ul>
+
+    <h3>Service — Helping Others</h3>
+    <p><b>Service</b> means using our time, effort and skills to help others without expecting anything in return. Service makes our family, school, and society better, and it also builds our own character.</p>
+
+    <div class="grid two">
+      <div class="tile"><b>🏫 At School</b><small>Keeping classrooms clean, helping classmates, taking part in drives and events.</small></div>
+      <div class="tile"><b>🏠 At Home</b><small>Helping parents, caring for younger siblings and elders, sharing household work.</small></div>
+      <div class="tile"><b>🌳 In Society</b><small>Tree plantation, cleanliness drives, helping neighbours, spreading awareness.</small></div>
+      <div class="tile"><b>🇮🇳 For the Nation</b><small>Following rules, saving water and electricity, being a responsible citizen.</small></div>
+    </div>
+
+    <h4>Skills That Make Good Service Possible</h4>
+    <table class="data">
+      <tr><th>Skill</th><th>How it helps me serve</th></tr>
+      <tr><td>Communication</td><td>I can understand others and explain clearly.</td></tr>
+      <tr><td>Teamwork</td><td>I can work with everyone to finish a task.</td></tr>
+      <tr><td>Empathy</td><td>I can feel and understand others’ problems.</td></tr>
+      <tr><td>Discipline</td><td>I do my duty on time without being told.</td></tr>
+    </table>
+
+    <div class="callout safe">
+      <b>🌟 What I Learned</b>
+      A strong personal life gives me the confidence and energy to serve others. When I help someone, I don’t just change their day — I become a better person too.
+    </div>
+
+    <div class="pledge">
+      <h3>My Pledge</h3>
+      <p>I will keep myself healthy, honest and disciplined. I will use my skills to help my family, my school and my country, and I will always try to be a useful and responsible citizen of India.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <b>Viren Sheoran</b> &nbsp;•&nbsp; Class 9-C &nbsp;•&nbsp; Scholars Global School<br>
+  Kaushal Vikas E-Portfolio &nbsp;•&nbsp; Session 2026-27 &nbsp;•&nbsp; Guided by Ms. Astha
+</footer>
+
+</body>
+</html>
